@@ -1,0 +1,22 @@
+<div class="well">
+  <div class="media">
+    <div class="pull-left"><%= image_tag comment.user.photo_user.url, :size => "50x70"%></div>
+    <div class="media-body">
+      <p class="text-right">By <%= link_to comment.user.name + " " + comment.user.surname, comment.user %></p>
+      <p class="text-left">&emsp;&emsp;<%= comment.text_comment %></p>
+      <ul class="list-inline list-unstyled">
+        <% if comment.created_at %>
+          <li><span><i class="glyphicon glyphicon-calendar"></i>
+          Commented <%= time_ago_in_words(comment.created_at) %> ago.</span></li>
+        <% end %>
+        <li>|</li>
+        <li>
+          <% if current_user?(comment.user) %>
+          <span><%= link_to "Delete comment", comment, method: :delete, data: { confirm: "You sure?" } %></span>
+          <% end %>
+        </li>
+        <li>|</li>
+      </ul>
+    </div>
+  </div>
+</div>

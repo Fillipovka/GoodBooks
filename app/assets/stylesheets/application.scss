@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  background: #e8edf3;
+}
+
+li.main-link:link {
+	color: black;
+	font-weight: 500;
+}
+
+li.main-link:visited {
+	color: black;
+}
+
+li.main-link:hover {
+	text-decoration: underline;
+}
+
+a.my-brand {
+	color: black;
+	font-weight: 700;
+	font-family: 'Ribeye Marrow';
+  font-size: 55px;
+}
+
+.main-link-text, .main-link-text:hover {
+	color: black;
+	font-weight: 700;
+	font-family: 'Basic';font-size: 23px;
+}
+
+
+li.main-link:hover .main-link-text:hover {
+	background-color: #e8edf3;
+}
+
+.navbar-header .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar-header .navbar-collapse {
+  text-align: center;
+}
+
+.brand {
+	padding-left: 10%;
+}
+
+.container-fluid {
+	padding: 40px 60px 0px 60px;
+}
+
+.container-login {
+  width: 100%;
+}
+
+.left-half {
+  background-color: #22264b;
+  float: left;
+  width: 38%;
+  height: 940px;
+}
+.right-half {
+  background-color: white;
+  float: left;
+  width: 62%;
+  height: 940px;
+}
+
+.link-text-login {
+  margin: 30px 10px 10px 10px;
+}
+
+.link-text-login, .link-text-login:hover {
+  color: white;
+  font-weight: 450;
+  font-family: 'Basic';font-size: 23px;
+}
+
+
+li.link-login:hover .link-text-login:hover {
+  background-color: #22264b;
+  font-family: 'Basic';
+  font-size: 26px;
+}
+
+.container-fluid-login {
+  padding-left: 45px;
+}
+
+.welcom {
+  margin: 220px 10px 10px 70px;
+  color: white;
+  font-weight: 700;
+  font-family: 'Basic';
+  font-size: 75px;
+}
+
+
+.link-text-login-rigth, .link-text-login-rigth:hover {
+  color: black;
+  font-weight: 480;
+  font-family: 'Basic';font-size: 23px;
+}
+
+
+li.link-login-rigth:hover .link-text-login-rigth:hover {
+  background-color: white;
+  font-family: 'Basic';
+  font-size: 26px;
+}

@@ -1,0 +1,40 @@
+<%= form_for(article) do |f| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <br>
+    <%= f.label :title_article %>
+    <%= f.text_field :title_article, class: 'form-control' %>
+    <br>
+
+    <br>
+    <%= f.label :text_article %>
+    <%= f.text_area :text_article, class: 'form-control' %>
+
+    <div class="field">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
+
+    <br>
+    <%= f.label :photo_article %>
+    <%= f.file_field :photo_article, class: 'form-control' %>
+    <br>
+    
+    <%= f.label :book %><br>
+    <%= f.collection_check_boxes :book_ids, Book.all, :id, :title do |check|%>
+      <%= check.check_box %>
+      <%= check.label %>
+    <% end %>
+    
+    <%= f.submit "Create" %>
+<% end %>

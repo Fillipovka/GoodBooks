@@ -1,0 +1,5 @@
+<div class="container">
+	<% @posts.each do |p| %>
+		<h5 style="color:white"><%= p.content %> <%= p.user.name %></h5><br>
+	<% end %>
+</div>

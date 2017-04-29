@@ -1,0 +1,26 @@
+<div class="container user">
+  <%= form_for(@user, remote: true, :html => { :role => "form_edit" }) do |f| %>
+    <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control', placeholder: "Enter your name" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :surname %>
+        <%= f.text_field :surname, class: 'form-control', placeholder: "Enter your surname"%>
+        <br>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', placeholder: "Enter your email"%>
+        <br>
+      </div>
+      
+      <div class="modal-footer">
+        <%= f.submit  "Update Film", :class => "btn btn-primary" %>
+      </div>
+  <% end %>
+</div>

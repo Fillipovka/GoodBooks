@@ -1,0 +1,70 @@
+<% provide(:title, 'Sign up') %>
+<div class="container-login">
+	<%= render 'layouts/header_login' %>
+	<div class="right-half">
+	  <h1 class="brand">GoodBooks</h1>
+	  <hr style="background-color: black; height: 10px; width: 100%; ">
+	  <div class="login-form">
+	    <%= form_for(@user, url: signup_path) do |f| %>
+	      <table class="table-create" align="center">
+	        <tr class="tr-create">
+	          <td class="td-create">
+	            <div class="input">
+	              <label for="user_name">First Name</label>
+	              <input type="text" name="user[name]" id="user_name">
+	              <span class="spin"></span>
+	            </div>
+	          </td>
+	        </tr>
+	        <tr class="tr-create">
+	          <td class="td-create">
+	            <div class="input">
+	              <label for="user_surname">Last Name</label>
+	              <input type="text" name="user[surname]" id="user_surname">
+	              <span class="spin"></span>
+	            </div>
+	          </td>
+	        </tr>
+	        <tr class="tr-create">
+	          <td class="td-create">
+	            <div class="input">
+	              <label for="user_email">Email</label>
+	              <input type="email" name="user[email]" id="user_email">
+	              <span class="spin"></span>
+	            </div>
+	          </td>
+	        </tr>
+	        <tr class="tr-create">  
+	          <td class="td-create">
+	            <div class="input">
+	              <label for="pws">Password</label>
+	              <input type="password" name="user[password]" id="pws">
+	              <span class="spin"></span>
+	            </div>
+	          </td>
+	        </tr>
+	        <tr class="tr-create">
+	          <td class="td-create">
+	            <%= f.label :password %>
+						  <%= f.password_field :password, class: 'form-control' %>
+						  <br>
+	          </td>
+	        </tr>
+	         <tr class="tr-create">
+	          <td class="td-create">
+						  <%= f.label :password_confirmation %>
+						  <%= f.password_field :password_confirmation, class: 'form-control' %><br>
+						  <br>
+						  <br>
+	          </td>
+	        </tr>
+	        <tr class="tr-create">
+	          <td class="td-create">
+	            <%= f.submit "Create account", class: "btn-c" %>        
+	          </td>
+	        </tr>
+	      </table>
+	    <% end %> 
+	  </div>
+	</div>
+</div>

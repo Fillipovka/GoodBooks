@@ -1,0 +1,23 @@
+<%= form_for(@article) do |f| %>
+    <br>
+    <%= f.label :title_article %>
+    <%= f.text_field :title_article, class: 'form-control' %>
+    <br>
+
+    <br>
+    <%= f.label :text_article %>
+    <%= f.text_area :text_article, class: 'form-control' %>
+
+    <br>
+    <%= f.label :photo_article %>
+    <%= f.file_field :photo_article, class: 'form-control' %>
+    <br>
+    
+    <%= f.label :book %><br>
+    <%= f.collection_check_boxes :book_ids, Book.all, :id, :title do |check|%>
+      <%= check.check_box %>
+      <%= check.label %>
+    <% end %>
+    
+    <%= f.submit "Update" %>
+<% end %>

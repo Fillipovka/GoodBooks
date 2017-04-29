@@ -1,0 +1,5 @@
+<%= form_for(current_user.favorite_books.find_by(book_id: @book.id), html: { method: :delete }, remote: true) do |f| %>
+  <%= button_tag(type: 'submit') do %>
+		Unfavorite book <span class="glyphicon glyphicon-heart">
+	<% end %>
+<% end %>

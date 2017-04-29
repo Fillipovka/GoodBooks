@@ -1,0 +1,380 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* SING IN*/
+.input,
+.input label,
+.input input,
+.input .spin  {
+   transition: 300ms cubic-bezier(.4, 0, .2, 1);
+   -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+   -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.input,
+.input input {
+   position: relative;
+}
+
+.input input {
+   height: 60px;
+   top: 10px;
+   border: none;
+   background: transparent;
+}
+
+.input input,
+.input label {
+   font-family: 'Roboto', sans-serif;
+   font-size: 24px;
+   color: rgba(0, 0, 0, 0.8);
+   font-weight: 400;
+}
+
+.input:before,
+.input .spin {
+   width: 100%;
+   height: 3px;
+   position: absolute;
+   bottom: 0;
+   left: 0;
+}
+
+.input:before {
+   content: "";
+   background: rgba(0, 0, 0, 0.1);
+   z-index: 3;
+}
+
+.input .spin {
+   background: #22264b;
+   z-index: 4;
+   width: 0;
+}
+
+
+.overbox .input:before {
+   background: rgba(255, 255, 255, 0.5);
+}
+
+.input label {
+   position: absolute;
+   top: 10px;
+   left: 0;
+   z-index: 2;
+   cursor: pointer;
+   line-height: 60px;
+   margin: auto;
+   width: 100%;
+}
+
+.overbox {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   overflow: inherit;
+   border-radius: 10px;
+   padding: 60px 50px 40px 50px;
+}
+
+.overbox .input {
+   margin-top: 20px;
+}
+
+.table-create, .th-create, .td-create {
+  padding: 30px;
+}
+
+
+/* HEADER */
+
+h1.brand {
+  color: black;
+  font-weight: 800;
+  font-family: 'Ribeye Marrow';
+  font-size: 56px;
+  text-align: center;
+  margin-left: -190px;
+  margin-top: 30px;
+}
+
+.btn-c {
+  position: relative;
+  height: 45px;
+  width: 300px;
+  margin: 10px 25px;
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: #383736;
+  border: 2px #383736 solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header-image {
+  margin-left: 50px;
+}
+
+.information {
+  margin-top: -152px;
+  margin-left: 19%;
+}
+
+#avatar-id {
+  border: 6px solid white;
+  border-radius: 6px;
+}
+
+.left-panel {
+  float: left;
+  width: 68%;
+  height: auto;
+}
+
+.right-panel {
+  float: right;
+  width: 32%;
+}
+
+.panel {
+  width: 70%;
+  float: right;
+}
+
+.panel #panel {
+  padding: 0px 20px 4px 20px; 
+  width: 12%;
+}
+
+
+h3#panel-text, h2#panel-count {
+  text-align: center;
+  color: black;
+  font-weight: 400;
+  font-family: 'Basic';
+}
+
+h3#panel-text {
+  font-size: 20px;
+}
+
+h2#panel-count {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+.left-post {
+  float: left;
+  height: 100px;
+  width: 66%;
+}
+
+.right-information {
+  float: right;
+  height: 100px;
+  width: 34%;
+}
+
+.t-information {
+  float: left;
+  width: 44%;
+}
+#about-user, #interests-user, #data-user, #name-user {
+  font-family: 'Basic';
+  font-size: 21px;
+  padding-left: 5px;
+}
+
+#name-user {
+  margin-top: -5px;
+  font-size: 24px;
+}
+
+#p-user {
+  font-family: 'Basic';
+  font-size: 15px;
+  padding-left: 12px;
+  text-align: center;
+  margin-top: -15px;
+}
+
+.div-post, .post-input {
+  float: left;
+  width: 68%;
+  margin-left: 387px;
+}
+
+.post-input {
+  border-color: black;
+  border: 2;
+}
+
+.div-post {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.btn-p {
+  position: relative;
+  height: 25px;
+  width: 100px;
+  margin: 10px 25px;
+  padding-left: 10px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #383736;
+  border: 2px #383736 solid;
+  border-radius: 4px;
+  text-transform: uppercase;
+  outline: 0;
+  overflow:hidden;
+  background: none;
+  z-index: 1;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+td#p-u-photo {
+  width: 13%;
+  padding-top: 15px; 
+  padding-left: 8px;
+}
+
+.img-circular{
+ width: 90px;
+ height: 120px;
+ background-size: cover;
+ display: block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}
+
+p#post {
+  font-family: 'Basic';
+  font-size: 16px;
+  font-weight: 20;
+  padding-left: 10px;
+}
+
+h3#post {
+  font-family: 'Basic';
+  font-size: 20px;
+  font-weight: 150;
+  padding-left: 13px;
+}
+
+#data-post {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 50;
+}
+
+td#aaa {
+  padding-left: 2%;
+}
+
+.add_comment, .add_comment:hover {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 150;
+  color: black;
+}
+
+
+/* USER ITEM*/
+
+.item-user {
+  width: 80%;
+  margin: 0 auto;
+} 
+
+figure.item {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 20px 2%;
+  min-width: 220px;
+  max-width: 320px;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+}
+
+figure.item .image {
+  width: 50%;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+
+figure.item .image img {
+  position: relative;
+  display: block;
+  left: -15%;
+  z-index: 1;
+  -webkit-transform: skew(15deg);
+  transform: skew(15deg);
+}
+
+
+figure.item figcaption {
+  padding: 20px 30px 20px 20px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  width: 50%;
+}
+
+figure.item figcaption p {
+  margin: 0;
+  text-align: right;
+  padding: 10px 0;
+  width: 100%;
+}
+
+h2#item-name {
+  width: 100%;
+  margin: 0;
+  text-align: right;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Basic';
+  padding: 10px 0;
+  margin-top: -20px;
+}
+
+figure.item figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+
+figure.item .position {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  opacity: 1;
+  font-style: italic;
+  color: #ffffff;
+  background: #000000;
+  padding-top: 20px;
+}

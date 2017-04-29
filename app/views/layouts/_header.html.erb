@@ -1,0 +1,23 @@
+<nav class="navbar navbar">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="main-link"><%= link_to "HOME", root_path, class: 'main-link-text'%></li>
+      <li class="main-link"><%= link_to "BOOKS", books_path, class: 'main-link-text'%></li>
+      <li class="main-link"><%= link_to "AUTHORS", authors_path, class: 'main-link-text'%></li>
+      <li class="main-link"><%= link_to "GENRES", categories_path, class: 'main-link-text'%></li>
+      <li class="main-link"><%= link_to "SEARCH", search_path, class: 'main-link-text' %></li>
+    </ul>
+    <div class="navbar-header brand">
+      <a class="navbar-brand my-brand" href="#">GoodBooks</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="main-link"><%= link_to "ABOUT", "#", class: 'main-link-text' %></li>
+      <li class="main-link"><%= link_to "USERS", users_path, class: 'main-link-text' %></li>  
+      <li class="main-link"><%= link_to "FEEDS", feed_user_path(current_user), class: 'main-link-text' %></li>
+      <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
+      <li class="main-link"><%= link_to "LOG OUT", logout_path, method: :delete, class: 'main-link-text' %></li>
+    </ul>   
+  </div>
+</nav>
+
+<hr style="background-color: black; height: 8px; width: 95%;">

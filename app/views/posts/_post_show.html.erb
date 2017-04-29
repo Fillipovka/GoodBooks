@@ -1,0 +1,46 @@
+<table style="width: 97%;">
+	<tr>
+		<td id="p-u-photo" rowspan="3" valign="top"><%= image_tag post.user.photo_user.url, class: "img-circular" %></td>
+		<td colspan="2"><h3 id="post"><%= post.user.name + " " + post.user.surname %></h3></td>
+		<td>
+			<div id="data-post"
+				<% if post.created_at %>
+	        <span><i class="glyphicon glyphicon-calendar"></i>
+	          Posted <%= time_ago_in_words(post.created_at) %> ago.</span>
+	      <% end %>
+	    </div>
+    </td>
+	</tr>
+	<tr>
+		<td colspan="3"><p id="post">&emsp;<%= post.content %></p></td>
+	</tr>
+	<tr>
+		<td colspan="3" id="aaa">
+			<ul class="list-inline list-unstyled">
+        <a href="#comment" class="add_comment" data-toggle="collapse">Add comment(<%= post.comments.count %>)</a>
+        <li>|</li>
+        <li>
+          <% if current_user?(post.user) %>
+            <span><%= link_to "Delete post", post, method: :delete, data: { confirm: "You sure?" }, :class =>"add_comment" %></span>
+          <% end %>
+        </li>
+        <li>|</li>
+        <li class="add_comment">Likes</li>
+      </ul>
+		</td>
+	</tr>
+</table>
+
+<div id="comment" class="collapse">
+  <div class="col-sm-11" style="margin-left: 70px; height: 50">
+    <div class="well">
+      <%= render 'comments/comment_form', post: post %><br>     
+    </div>
+    <% unless post.comments.empty? %>
+      <% post.comments.each do |c| %>
+        <%= render 'comments/comment_show', comment: c %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<hr style="background: black; height: 3px;">

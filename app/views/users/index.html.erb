@@ -1,0 +1,89 @@
+<% @users.each do |i|%>
+	<%= render "card_user", user: i%>
+<% end %>
+
+<style>
+
+.item-user {
+	width: 80%;
+	margin: 0 auto;
+}	
+
+figure.item {
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 20px 2%;
+  min-width: 220px;
+  max-width: 320px;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+}
+
+figure.item .image {
+  width: 50%;
+  overflow: hidden;
+  z-index: 1;
+  -webkit-transform: skewX(-15deg);
+  transform: skewX(-15deg);
+}
+
+figure.item .image img {
+  position: relative;
+  display: block;
+  left: -15%;
+  z-index: 1;
+  -webkit-transform: skew(15deg);
+  transform: skew(15deg);
+}
+
+
+figure.item figcaption {
+  padding: 20px 30px 20px 20px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  width: 50%;
+}
+
+figure.item figcaption p {
+  margin: 0;
+  text-align: right;
+  padding: 10px 0;
+  width: 100%;
+}
+
+h2#item-name {
+	width: 100%;
+	margin: 0;
+  text-align: right;
+	font-weight: 200;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: 'Basic';
+  padding: 10px 0;
+  margin-top: -20px;
+}
+
+figure.item figcaption p {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+
+figure.item .position {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+  padding: 15px 30px;
+  font-size: 0.9em;
+  opacity: 1;
+  font-style: italic;
+  color: #ffffff;
+  background: #000000;
+  padding-top: 20px;
+}
+</style>

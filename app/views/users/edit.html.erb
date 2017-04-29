@@ -1,0 +1,52 @@
+<div class="container user">
+  <%= form_for(@user, url: user_path) do |f| %>
+    <br>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Enter your name" %>
+    <br>
+
+    <%= f.label :surname %>
+    <%= f.text_field :surname, class: 'form-control', placeholder: "Enter your surname"%>
+    <br>
+
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control', placeholder: "Enter your email"%>
+    <br>
+
+    <%= f.label :dateOfBirth %>
+    <%= f.date_select :dateOfBirth, start_year: Date.new(1900, 1, 1).year,
+                                     end_year: DateTime.now.year, class: 'form-control' %>
+    <br><br>
+
+    <%= f.label :country %>&emsp;
+    <%= f.country_select :country, class: 'form-control' %>
+    <br><br>
+
+    <%= f.label :city %>
+    <%= f.text_field :city, class: 'form-control', placeholder: "City"%>
+    <br>
+
+    <%= f.label :interests %>
+    <%= f.text_area :interests, class: 'form-control' %>
+    <br>
+
+    <%= f.label :aboutMe %>
+    <%= f.text_area :aboutMe, class: 'form-control' %>
+    <br>
+
+    <%= f.label :photo_user %><br>
+    <%= f.file_field :photo_user, class: 'form-control' %>
+    <br>
+
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+    <br>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password confirmation"  %><br>
+    <br>
+    
+    <%= f.submit "Update account", class: "btn-create" %>
+  <% end %>
+</div>
+

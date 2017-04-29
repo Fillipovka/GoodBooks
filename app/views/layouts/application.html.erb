@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoodBooks</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link href='//fonts.googleapis.com/css?family=Ribeye Marrow' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
+  </head>
+
+  <body class="<%= @home_page ? 'homepage' : ''%>">
+    <% if logged_in? %>
+      <%= render 'layouts/header' %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

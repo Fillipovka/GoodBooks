@@ -1,0 +1,50 @@
+<%= form_for(book) do |f| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="container new-book">
+    <br>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+    <br>
+
+    <br>
+    <%= f.label :author_id %>&emsp;
+    <%= f.select :author_id, Author.all.collect {|x| [x.lName, x.id]}, class: 'form-control' %>
+    <br>
+
+    <br>
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+
+    <br>
+    <%= f.label :editionLanguage %>
+    <%= f.text_field :editionLanguage, class: 'form-control' %>
+    
+    <br>
+    <%= f.label :genre %><br>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :genre do |check|%>
+      <%= check.check_box %>
+      <%= check.label %>
+    <% end %>
+
+    <br><br>
+    <%= f.label :yearPublication %>&emsp;
+    <%= f.select :yearPublication, 1701..DateTime.now.year, class: 'form-control' %>
+
+    <br><br>
+    <%= f.label :photo_book %>
+    <%= f.file_field :photo_book, class: 'form-control' %><br><br>
+    
+    <%= f.submit "Create Book" %>
+  </div>
+<% end %>

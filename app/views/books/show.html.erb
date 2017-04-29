@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="well margin-well">
+		<div class="row margin-row">
+			<div class="col-sm-3 well" style="background: #1c1c1c;">
+	      <div class="well" style="margin-left: 10px; margin-right: 10px;"> 
+	        <%= image_tag @book.photo_book.url, :size => "130x200"%>
+	      </div>
+	      <div class="well">       
+					<%= render 'favorite_book_form', book: @book %>
+	      </div>
+			</div>
+			<div class="col-sm-8 small" style="background: #1c1c1c; width: 70%; margin-left: 20px;
+																				 margin-top: 3px; border-radius: 5px;"">
+				<h3><%= @book.title%></h3>
+				<h4 id="author">by <%= @book.author.fName %> <%= @book.author.lName %></h4>
+			</div>
+			<div class="col-sm-8 well" style="background: #1c1c1c; width: 70%; margin-left: 20px;
+																				margin-top: 12px; border-radius: 5px;">
+				<table class="book">
+				<tr>
+					<td><h4>Year Publication:</h4></td>
+					<td><h4><%= @book.yearPublication%></h4></td>
+				</tr>
+				<tr>
+					<td><h4>Language:</h4></td>
+					<td><h4><%= @book.editionLanguage %></h4></td>
+				</tr>
+				<tr>
+					<td><h4>Gernres:</h4></td>
+				  <td>
+						<h4>
+							<% @genres.each do |c|%>
+								<%= c.genre %>
+						  <% end %>
+						</h4>
+					</td>
+				</tr>
+				</table>
+			</div>
+			<div class="col-sm-8 well" style="background: #1c1c1c; width: 70%; margin-left: 20px;
+																				margin-top: 12px; border-radius: 5px;">
+				<p id="description">&emsp;<%= @book.description%></p>
+			</div>
+		</div>
+	</div>
+</div>

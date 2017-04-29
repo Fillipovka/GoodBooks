@@ -1,0 +1,93 @@
+// Place all the styles related to the Authors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.author {
+    width: 82%;
+}
+  
+.td-author {
+    width: 27%;
+ }
+
+.td-author-text {
+	width: 55%;
+ }
+
+#author-item-left, #author-item-rigth {
+	padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+#author-item-left {
+  margin: 50px 110px 50px 0px;
+}
+
+#author-item-rigth {
+  margin: 60px 0px 60px 110px;
+}
+
+.author-image #iauthor {
+  display: block;
+  margin: auto;
+  transition: .1s transform;
+  transform: translateZ(0);
+}
+
+.author-image:hover > #iauthor{
+  transform: scale(1.1, 1.1);
+  transition: .3s transform;
+}
+
+
+#author-link {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.author-link-text {
+  color: black;
+	font-weight: 700;
+	font-family: 'Basic';
+	font-size: 33px;
+	display: block;
+	margin: auto;
+}
+
+.author-link-text:hover {
+  color: black;
+	font-weight: 700;
+	font-size: 37px;
+	text-decoration: none;
+}
+
+.link-author {
+  color: black;
+	font-weight: 700;
+	font-family: 'Basic';
+	font-size: 33px;
+	display: block;
+	margin: auto;
+}
+
+.link-author:hover {
+  color: black;
+	font-weight: 700;
+	font-style: italic;
+	text-decoration: none;
+}
+
+#author-biography {
+	color: black;
+	font-weight: 500;
+	font-family: 'Basic';
+	font-size: 25px;
+	display: block;
+	margin: auto;
+}

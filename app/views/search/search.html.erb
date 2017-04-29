@@ -1,0 +1,28 @@
+<div class="container">
+  <h1>Books Search</h1>
+
+  <%= form_for search_path, method: :get do |f| %>
+    <p>
+      <%= f.label "Search for" %>
+      <%= text_field_tag :q, params[:q] %>
+      <%= submit_tag "Go", name: nil %>
+    </p>
+  <% end %>
+
+  <ul>
+    <% @search_books.each do |book| %>
+      <li>
+        <h3>
+          <%= link_to book.title, controller: "books", action: "show", id: book._id%>
+        </h3>
+      </li>
+    <% end %>
+    <% @search_author .each do |author| %>
+      <li>
+        <h3>
+          <%= link_to author.fName, controller: "authors", action: "show", id: author._id%>
+        </h3>
+      </li>
+    <% end %>
+  </ul>
+</div>

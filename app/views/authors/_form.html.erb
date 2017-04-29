@@ -1,0 +1,39 @@
+<%= form_for(author) do |f| %>
+  <div class="container new-author">
+    <br>
+    <%= f.label :fName %>
+    <%= f.text_field :fName, class: 'form-control' %>
+    <br>
+
+    <%= f.label :lName %>
+    <%= f.text_field :lName, class: 'form-control' %>
+    <br>
+
+    <%= f.label :biography %>
+    <%= f.text_area :biography, class: 'form-control' %>
+    <br>
+
+    <br>
+    <%= f.label :genre %><br>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :genre do |check|%>
+      <%= check.check_box %>
+      <%= check.label %>
+    <% end %>
+    <br><br>
+
+    <%= f.label :birthplace %>
+    <%= f.text_field :birthplace, class: 'form-control' %>
+    <br>
+
+    <%= f.label :dateOfBirth %>
+    <%= f.date_field :dateOfBirth, class: 'form-control' %>
+    <br>
+    
+    <%= f.label :photo_author %><br>
+    <%= f.file_field :photo_author, class: 'form-control' %>
+    <br>
+
+    <%= f.submit "Create author" %>
+  </div>
+<% end %>
+

@@ -1,0 +1,42 @@
+<% if logged_in? %>
+  <div class="container" style="width: 100%;">
+	  <div class="article">
+	  	<div class="row article">
+	  	 	<% @last_articles.each do |article| %>
+			    <div class="col-sm-4">
+			    	<%= image_tag article.photo_article.url, :size => "500x310", :style => "border-radius: 8px;"%>
+			    	<h5><%= link_to article.title_article, article_path(article), class: 'article-link-text'%></h5>
+			    </div>
+			  <% end %>
+		  </div>
+  	</div>
+  
+	  <h1 class="article">WHAT'S NEW</h1>
+
+	  <div class="whats-new">
+	  	<div class="row whats-new">
+	  		<% @last_books.each do |book| %> 
+			  	<div class="col-sm-2">
+			  		<h5><%= link_to book.title, book_path(book), class: 'book-link-text'%></h5>
+			  		<div class="center-image"><br>
+			  			<%= image_tag book.photo_book.url, :size => "200x310", :style => "border-radius: 8px;" %>
+			  		</div>
+			  	</div>
+			  <% end %>
+		  </div>
+		</div>
+  </div>
+
+  <div class="active-users">
+  	
+  </div>
+<% else %>
+  <div class="hello">
+    <table class="home" align="center">
+      <tr>
+        <td><%= button_to "Log in", login_path, :class => "button", :method => :get %></td>
+        <td><%= button_to "Sing in", signup_path, :class => "button", :method => :get %></td>
+      </tr>
+    </table>
+  </div>
+<% end %>

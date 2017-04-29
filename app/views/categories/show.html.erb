@@ -1,0 +1,72 @@
+<div align="center"><h3 class="category-book">Books &gt; <%= @category.genre %></h3></div>
+<div align="center"><h1 class="category"><%= @category.genre %></h1></div>
+<% @books.each_slice(5) do |book|%>
+	<table class="category-book" align="center">
+		<% if book.length == 5 %>
+			<tr class="tr-category-book">
+				<td colspan="2" class="td-category-book">
+					<div id="category-book-item" style="background: #22264b">
+				  	<div class="category-book-image">
+				  		<%= image_tag book[0].photo_book.url, :size => "240x360", id: "ibook"%>
+				  	</div>
+				  </div>
+				  <div id="category-book-link">
+				  	<%= link_to book[0].title, book_path(book[0]), class: 'c-book-link-text'%>
+				  	<%= link_to "by  " + book[0].author.fName + "  " + book[0].author.lName, 
+				  		  author_path(book[0].author), class: 'c-book-link-author'%>
+				  </div>
+				</td>
+				<td colspan="2" class="td-category-book">
+				  <div id="category-book-item" style="background: #b56969">
+				  	<div class="category-book-image">
+				  		<%= image_tag book[1].photo_book.url, :size => "240x360", id: "ibook"%>
+				  	</div>
+				  </div>
+				  <div id="category-book-link">
+				  	<%= link_to book[1].title, book_path(book[1]), class: 'c-book-link-text'%>
+				  	<%= link_to "by  " + book[1].author.fName + "  " + book[1].author.lName, 
+				  		  author_path(book[1].author), class: 'c-book-link-author'%>
+				  </div>
+				</td>
+				<td colspan="2" class="td-category-book">
+				  <div id="category-book-item" style="background: #e6cf8b">
+				  	<div class="category-book-image">
+				  		<%= image_tag book[2].photo_book.url, :size => "240x360", id: "ibook"%>
+				  	</div>
+				  </div>
+				  <div id="category-book-link">
+				  	<%= link_to book[2].title, book_path(book[2]), class: 'c-book-link-text'%>
+				  	<%= link_to "by  " + book[2].author.fName + "  " + book[2].author.lName, 
+				  		  author_path(book[2].author), class: 'c-book-link-author'%>
+				  </div>
+				</td>
+		  </tr>
+		  <tr class="tr-category-book">
+				<td colspan="3" class="td-category-book">
+				  <div id="category-book-item-two" style="background: #e6cf8b">
+				  	<div class="category-book-image-two">
+				  		<%= image_tag book[3].photo_book.url, :size => "315x480", id: "ibook-two"%>
+				  	</div>
+				  </div>
+				  <div id="category-book-link">
+				  	<%= link_to book[3].title, book_path(book[3]), class: 'c-book-link-text'%>
+				  	<%= link_to "by  " + book[3].author.fName + "  " + book[3].author.lName, 
+				  		  author_path(book[3].author), class: 'c-book-link-author'%>
+				  </div>
+				</td>
+				<td colspan="3" class="td-category-book-two">
+				  <div id="category-book-item-two" style="background: #22264b">
+				  	<div class="category-book-image-two">
+				  		<%= image_tag book[4].photo_book.url, :size => "315x480", id: "ibook-two"%>
+				  	</div>
+				  </div>
+				  <div id="category-book-link">
+				  	<%= link_to book[4].title, book_path(book[4]), class: 'c-book-link-text'%>
+				  	<%= link_to "by  " + book[4].author.fName + "  " + book[4].author.lName, 
+				  		  author_path(book[4].author), class: 'c-book-link-author'%>
+				  </div>
+				</td>
+		  </tr>
+		<% end %>
+	</table>
+<% end %>

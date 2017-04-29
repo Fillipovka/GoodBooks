@@ -1,0 +1,61 @@
+<div class="left-block"">
+	<div class="feed">
+	<% @feed_items.each do |i|%>
+		<%= render "posts/post_show", post: i %>
+	<% end %>
+	</div>
+</div>
+<div class="rigth-block">
+	<div class="user-item">
+		<table>
+			<tr>
+				<td id="p-u-photo" rowspan="2" valign="top"><%= image_tag @current_user.photo_user.url, class: "img-circular" %>
+				</td>
+				<td colspan="2"><h4 align="center"><%= @current_user.name + " " + @current_user.surname %></h4></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<p id="p-user" style="padding-top: 20px;"><%= @current_user.interests%></p>
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<h2 id="f-item">Post <%= @current_user.posts.count %></h2>
+				</td>
+				<td align="center">
+					<h2 id="f-item">Followers <%= @current_user.followers.count %></h2>
+				</td>
+				<td align="center">
+					<h2 id="f-item">Following <%= @current_user.following.count %></h2>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+<style>
+
+.rigth-block {
+	float: right;
+	width: 35%;
+}
+
+.left-block {
+	width: 65%;
+	float: left;
+}
+
+.feed {
+	width: 68%;
+	margin-left: 337px;
+}
+
+.user-item {
+	float: left;
+  width: 43%;
+}
+
+#f-item {
+	font-family: 'Basic';
+  font-size: 17px;
+}
+</style>

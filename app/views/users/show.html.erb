@@ -1,0 +1,90 @@
+<div class="container-user">
+  <div class="header-image">
+    <%= image_tag "image2.jpeg", :size => "1820x500" %>
+  </div>
+  <div class="left-panel">
+    <table class="panel">
+        <tr>
+          <td id="panel">
+            <h3 id="panel-text">Post</h3>
+            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <h2 id="panel-count"><%= @user.posts.count %></h2>
+          </td>
+          <td id="panel">
+            <h3 id="panel-text">Following</h3>
+            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <h2 id="panel-count"><%= @user.following.count %></h2>
+          </td>
+          <td id="panel">
+            <h3 id="panel-text">Followers</h3>
+            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <h2 id="panel-count"><%= @user.followers.count %></h2>
+          </td>
+          <td id="panel">
+            <h3 id="panel-text">My_Books</h3>
+            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <h2 id="panel-count"><%= @user.posts.count %></h2>
+          </td>
+
+          <td id="panel">
+            <h3 id="panel-text">Likes</h3>
+            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <h2 id="panel-count"><%= @user.posts.count %></h2>
+          </td>
+          <td id="panel"></td>
+        </tr>
+      </table>
+  </div>
+  <div class="rigth-panel">
+    <div class="information">
+      <%= image_tag @user.photo_user.url, :size => "200x260", :id => "avatar-id" %>
+    </div>
+  </div>
+  <div class="left-post">
+    <% if current_user?(@user)%>
+      <%= form_for(@post) do |f| %>
+        <table class="post-input">
+          <tr>
+            <td style="padding: 20px;">
+              <%= f.text_area :content, class: 'form-control', placeholder: "Compose new post...", cols: 20, rows: 1 %>
+            </td>
+          </tr>
+          <tr>
+            <td align="rigth">
+              <%= f.submit "Post", class: "btn-p"%>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    <% end %>
+    <div class="div-post">
+      <hr style="background-color: black; height: 3px; width: 100%; margin-top: -5px;">
+      <% @posts.each do |i|%>
+        <%= render "posts/post_show", post: i %>
+    <% end %>
+    </div>
+  </div>
+  <div class="right-information">
+    <table class="t-information">
+      <tr>
+        <td>
+          <h3 id="name-user" align="center"><%= @user.name + " " + @user.surname %></h3>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h4 id="about-user" align="center">About Me</h4>
+          <hr style="background-color: black; height: 3px; width: 80%; margin-top: -5px;">
+          <p id="p-user"><%= @user.aboutMe%></p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h4 id="interests-user" align="center">Interests</h4>
+          <hr style="background-color: black; height: 3px; width: 80%; margin-top: -5px;">
+          <p id="p-user"><%= @user.interests%></p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div> 

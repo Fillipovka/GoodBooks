@@ -1,0 +1,15 @@
+<div class="item-user">
+	<figure class="item">
+	  <figcaption>
+	    <h2 id="item-name"><%= user.name + " " + user.surname %></h2>
+	    <% if user.aboutMe.nil? %>
+	    	<p>No information</p>
+	    <% end %>
+	    <p><%= user.interests %></p>
+	  </figcaption>
+	  <div class="image">
+	  	<%= image_tag user.photo_user.url, :size => "220x320" %>
+	  </div>
+	  <div class="position">Software Engineer</div>
+	</figure>
+</div>
