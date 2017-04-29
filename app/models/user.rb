@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :liked_posts, :through => :likes, :source => :post
 
+  has_many :comments
 
   has_many :active_friends, class_name: "Friend", 
                             foreign_key: "follower_id", 
@@ -27,7 +28,6 @@ class User < ApplicationRecord
   
   has_many :favorite_books, dependent: :destroy
   has_many :books, through: :favorite_books
-
 
 	validates :name, presence: true, length: { maximum: 40 }
 

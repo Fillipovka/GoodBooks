@@ -10,6 +10,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @posts.each do |i|
+      @commentable = i
+      @comments = @commentable.comments
+      @comment = Comment.new
+    end
   end
 
   def new

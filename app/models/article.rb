@@ -4,6 +4,8 @@ class Article < ApplicationRecord
 	has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
 
+  has_many :comments, as: :commentable
+
 	has_attached_file :photo_article
 	validates_attachment_content_type :photo_article, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
@@ -15,7 +17,6 @@ class Article < ApplicationRecord
     Tag.joins(:taggings).select('tags.id, tags.tag_name, count(taggings.tag_id) as count').
     		group('taggings.tag_id, tags.id, tags.tag_name ')
   end
-
 
   def tag_list
     tags.map(&:tag_name).join(' ')

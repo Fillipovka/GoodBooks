@@ -12,6 +12,7 @@ class Book < ApplicationRecord
   has_many :favorite_books, dependent: :destroy
   has_many :users, through: :favorite_books
 
+  has_many :comments, as: :commentable
 
 	validates_attachment_content_type :photo_book, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 

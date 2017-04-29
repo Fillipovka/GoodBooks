@@ -12,7 +12,9 @@ Rails.application.routes.draw do
  
   resources :authors
   
-  resources :books
+  resources :books do
+    resources :comments
+  end
   
   resources :categories
   
@@ -29,8 +31,9 @@ Rails.application.routes.draw do
   
   resources :friends, only: [:create, :destroy] 
   resources :favorite_books, only: [:create, :destroy]
-  resources :comments
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   get 'tags/:tag', to: 'articles#index', as: :tag, :constraints  => { :tag => /[^\/]+/ }
 end
