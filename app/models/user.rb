@@ -9,6 +9,10 @@ class User < ApplicationRecord
   
   has_many :posts, dependent: :destroy
 
+  has_many :likes
+  has_many :liked_posts, :through => :likes, :source => :post
+
+
   has_many :active_friends, class_name: "Friend", 
                             foreign_key: "follower_id", 
                             dependent: :destroy
@@ -24,7 +28,6 @@ class User < ApplicationRecord
   has_many :favorite_books, dependent: :destroy
   has_many :books, through: :favorite_books
 
-  has_many :comments
 
 	validates :name, presence: true, length: { maximum: 40 }
 
@@ -42,6 +45,7 @@ class User < ApplicationRecord
 
   validates_attachment_content_type :photo_user, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
+
   def User.digest(string)
   	cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost    	
     BCrypt::Password.create(string, cost: cost)
@@ -90,15 +94,15 @@ class User < ApplicationRecord
   end
 
   def liking_post?(post)
-    likes.include?(post)
+    liked_posts.include?(post)
   end
 
   def like(post)
-    likes << post
+    liked_posts << post
   end
 
   def dislike(post)
-    likes.delete(post)
+    liked_posts.delete(post)
   end
   
   private    

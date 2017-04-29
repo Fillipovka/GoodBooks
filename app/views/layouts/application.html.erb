@@ -11,10 +11,8 @@
     <link href='//fonts.googleapis.com/css?family=Basic' rel='stylesheet'>
   </head>
 
-  <body class="<%= @home_page ? 'homepage' : ''%>">
-    <% if logged_in? %>
-      <%= render 'layouts/header' %>
-    <% end %>
+  <body>
+    <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>

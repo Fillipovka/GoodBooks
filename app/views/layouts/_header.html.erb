@@ -12,10 +12,18 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="main-link"><%= link_to "ABOUT", "#", class: 'main-link-text' %></li>
+      <li class="main-link"><%= link_to "ARTICLES", "#", class: 'main-link-text' %></li>
       <li class="main-link"><%= link_to "USERS", users_path, class: 'main-link-text' %></li>  
-      <li class="main-link"><%= link_to "FEEDS", feed_user_path(current_user), class: 'main-link-text' %></li>
-      <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
-      <li class="main-link"><%= link_to "LOG OUT", logout_path, method: :delete, class: 'main-link-text' %></li>
+      <% if logged_in? %>
+         <li class="main-link"><%= link_to "FEEDS", feed_user_path(current_user), class: 'main-link-text' %></li>
+        <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
+        <li class="main-link"><%= link_to "LOG OUT", logout_path, method: :delete, class: 'main-link-text' %></li>
+      <% else %>
+        <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
+        <li class="main-link sub-item">
+          <%= link_to "LOG IN", login_path, class: 'main-link-text' %>
+        </li>
+      <% end %>
     </ul>   
   </div>
 </nav>
