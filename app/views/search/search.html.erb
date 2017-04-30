@@ -1,20 +1,31 @@
-<div class="container">
-  <h1>Books Search</h1>
-
+<div class="container" style="width: 100%;">
+  <div style="padding-left: 2%; padding-bottom: 1%;">
+    <%= image_tag "image2.jpeg", :size => "1800x500" %>
+  </div>
   <%= form_for search_path, method: :get do |f| %>
-    <p>
-      <%= f.label "Search for" %>
-      <%= text_field_tag :q, params[:q] %>
-      <%= submit_tag "Go", name: nil %>
-    </p>
+    <table width="70%" align="center">
+      <tr>
+        <td align="right" >
+          <h1 id="search">Search</h1>
+        </td>
+        <td align="left" width="76%" valign="bottom">
+          <%= text_field_tag :q, params[:q], id: "form-s"%>   
+        </td>
+      </tr>
+    </table>
+    <hr style="background: black; height: 3px; width: 60%; margin-top: -4px;">
   <% end %>
 
+  <div class="result" style="width: 60%; margin: 0 auto; padding: 10px 0 10px 0;">
   <ul>
     <% @search_books.each do |book| %>
       <li>
         <h3>
           <%= link_to book.title, controller: "books", action: "show", id: book._id%>
         </h3>
+        <p style="padding-right: 4px;">
+          &emsp;&emsp;<%= book.description %>
+        </p>
       </li>
     <% end %>
     <% @search_author .each do |author| %>
@@ -25,4 +36,21 @@
       </li>
     <% end %>
   </ul>
+  </div>
 </div>
+
+<style>
+  #form-s {
+    width: 85%;
+    margin: 20px 0px 20px 30px;
+    height: 40px;
+  }
+
+  h1#search {
+    color: black;
+    font-weight: 600;
+    font-family: 'Ribeye Marrow';
+    font-size: 49px;
+    margin-top: -1px;
+  }
+</style>

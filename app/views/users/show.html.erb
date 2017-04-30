@@ -7,28 +7,28 @@
         <tr>
           <td id="panel">
             <h3 id="panel-text">Post</h3>
-            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <hr style="background-color: #1d2120; height: 1px; width: 95%; margin-top: -3px;">
             <h2 id="panel-count"><%= @user.posts.count %></h2>
           </td>
           <td id="panel">
             <h3 id="panel-text">Following</h3>
-            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <hr style="background-color: #1d2120 ; height: 1px; width: 95%; margin-top: -3px;">
             <h2 id="panel-count"><%= @user.following.count %></h2>
           </td>
           <td id="panel">
             <h3 id="panel-text">Followers</h3>
-            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <hr style="background-color: #1d2120 ; height: 1px; width: 95%; margin-top: -3px;">
             <h2 id="panel-count"><%= @user.followers.count %></h2>
           </td>
           <td id="panel">
             <h3 id="panel-text">My_Books</h3>
-            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <hr style="background-color: #1d2120 ; height: 1px; width: 95%; margin-top: -3px;">
             <h2 id="panel-count"><%= @user.posts.count %></h2>
           </td>
 
           <td id="panel">
             <h3 id="panel-text">Likes</h3>
-            <hr style="background-color: black; height: 1px; width: 95%; margin-top: -3px;">
+            <hr style="background-color: #1d2120; height: 1px; width: 95%; margin-top: -3px;">
             <h2 id="panel-count"><%= @user.posts.count %></h2>
           </td>
           <td id="panel"></td>
@@ -58,7 +58,7 @@
       <% end %>
     <% end %>
     <div class="div-post">
-      <hr style="background-color: black; height: 3px; width: 100%; margin-top: -5px;">
+      <hr style="background-color: #1d2120; height: 3px; width: 100%; margin-top: -5px;">
       <% @posts.each do |i|%>
         <%= render "posts/post_show", post: i %>
     <% end %>
@@ -74,14 +74,14 @@
       <tr>
         <td>
           <h4 id="about-user" align="center">About Me</h4>
-          <hr style="background-color: black; height: 3px; width: 80%; margin-top: -5px;">
+          <hr style="background-color: #1d2120; height: 3px; width: 80%; margin-top: -5px;">
           <p id="p-user"><%= @user.aboutMe%></p>
         </td>
       </tr>
       <tr>
         <td>
           <h4 id="interests-user" align="center">Interests</h4>
-          <hr style="background-color: black; height: 3px; width: 80%; margin-top: -5px;">
+          <hr style="background-color: #1d2120; height: 3px; width: 80%; margin-top: -5px;">
           <p id="p-user"><%= @user.interests%></p>
         </td>
       </tr>

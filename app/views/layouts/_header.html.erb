@@ -21,9 +21,9 @@
         <li class="main-link"><%= link_to "ABOUT", "#", class: 'main-link-text' %></li>
         <li class="main-link"><%= link_to "SEARCH", search_path, class: 'main-link-text' %></li> 
         <li class="dropdown">
-          <a id="aaaa" style="background: #e8edf3;" data-toggle="dropdown"><div class="main-account-text">ACCOUNT</div></a>
+          <a id="aaaa" style="background: white;" data-toggle="dropdown"><div class="main-account-text">ACCOUNT</div></a>
           <ul class="dropdown-menu">
-            <%= render 'users/form' %>
+            <%= render 'sessions/form' %>
           </ul>
         </li>
       <% end %>
@@ -31,27 +31,19 @@
   </div>
 </nav>
 
-<hr style="background-color: black; height: 8px; width: 95%;">
+<hr style="background-color: #1d2120; height: 8px; width: 95%;">
 
 <style>
   .main-account-text {
     font-family: 'Basic';font-size: 23px;
-    color: black;
+    color: #1d2120;
     font-weight: 700;
   }
 
   .main-account-text:hover {
     font-family: 'Basic';font-size: 23px;
-    color: black;
+    color: #1d2120;
     font-weight: 700;
-    background: #e8edf3;
+    background: white;
   }
 </style>
-
-<script>
-$('ul.nav li.dropdown').hover(function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-}, function() {
-  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-});
-</script>

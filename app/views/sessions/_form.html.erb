@@ -1,13 +1,33 @@
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.email_field :email, class: 'form-control' %><br>
-
-  <%= f.label :password %>
-  <%= f.password_field :password, class: 'form-control' %><br>
-  <br>
-  <%= f.submit "Log in", class: "btn-session" %>
-  &emsp;&emsp;&emsp;    
-  <%= f.label :remember_me do %>
-    <%= f.check_box :remember_me %> <span>Remember me on this computer</span>
+<div class="sing-in" style="width: 600px;">
+  <h2 align="center" class="main-account-text">ACCOUNT</h2>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <table class="table-create" align="center">
+      <tr class="tr-create">
+        <td class="td-create" colspan="2">
+          <div class="input">
+            <label for="user_email">Email</label>
+            <input name="session[email]" id="user_email">
+            <span class="spin"></span>
+          </div>
+        </td>
+      </tr>
+      <tr class="tr-create">  
+        <td class="td-create" colspan="2">
+          <div class="input">
+            <label for="pws">Password</label>
+            <input type="password" name="session[password]" id="pws">
+            <span class="spin"></span>
+          </div>
+        </td>
+      </tr>
+      <tr class="tr-create">
+        <td class="td-create">
+          <%= link_to "Create account", signup_path, class: 'main-link-text' %>       
+        </td>
+        <td class="td-create" align="right">
+          <%= f.submit "Log in", class: "btn-sing" %>        
+        </td>
+      </tr>
+    </table>
   <% end %>
-<% end %>
+</div>

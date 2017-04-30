@@ -17,16 +17,16 @@
 @import "bootstrap";
 
 body {
-  background: #e8edf3;
+  background: white;
 }
 
 li.main-link:link {
-	color: black;
+	color: #1d2120;
 	font-weight: 500;
 }
 
 li.main-link:visited {
-	color: black;
+	color: #1d2120;
 }
 
 li.main-link:hover {
@@ -34,21 +34,21 @@ li.main-link:hover {
 }
 
 a.my-brand {
-	color: black;
+	color: #1d2120;
 	font-weight: 700;
 	font-family: 'Ribeye Marrow';
   font-size: 55px;
 }
 
 .main-link-text, .main-link-text:hover {
-	color: black;
+	color: #1d2120;
 	font-weight: 700;
 	font-family: 'Basic';font-size: 23px;
 }
 
 
 li.main-link:hover .main-link-text:hover {
-	background-color: #e8edf3;
+	background-color: white;
 }
 
 .navbar-header .navbar-nav {
@@ -117,7 +117,7 @@ li.link-login:hover .link-text-login:hover {
 
 
 .link-text-login-rigth, .link-text-login-rigth:hover {
-  color: black;
+  color: #1d2120;
   font-weight: 480;
   font-family: 'Basic';font-size: 23px;
 }
