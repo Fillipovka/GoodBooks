@@ -10,7 +10,7 @@ class Author < ApplicationRecord
 
   validates :fName, length: {in: 2..40}
   validates :lName, length: {in: 2..50}
-  validates :biography, length: { in: 200..10000 }, uniqueness: true
+  validates :biography, length: { in: 200..10000 }
   validates :birthplace, length: {in: 10..300}
 
 	def self.search(query)
