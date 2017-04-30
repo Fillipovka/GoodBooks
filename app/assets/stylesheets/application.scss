@@ -20,13 +20,11 @@ body {
   background: white;
 }
 
-li.main-link:link {
+/* HEADER */
+
+li.main-link:link, li.main-link:visited {
 	color: #1d2120;
 	font-weight: 500;
-}
-
-li.main-link:visited {
-	color: #1d2120;
 }
 
 li.main-link:hover {
@@ -119,7 +117,8 @@ li.link-login:hover .link-text-login:hover {
 .link-text-login-rigth, .link-text-login-rigth:hover {
   color: #1d2120;
   font-weight: 480;
-  font-family: 'Basic';font-size: 23px;
+  font-family: 'Basic';
+  font-size: 23px;
 }
 
 
@@ -129,3 +128,12 @@ li.link-login-rigth:hover .link-text-login-rigth:hover {
   font-size: 26px;
 }
 
+.main-account-text, .main-account-text:hover  {
+  font-family: 'Basic';font-size: 23px;
+  color: #1d2120;
+  font-weight: 700;
+}
+
+.main-account-text:hover {
+  background: white;
+}

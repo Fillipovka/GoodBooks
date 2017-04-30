@@ -3,13 +3,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :show]
   before_action :create_post, only: [:show, :feed]
   before_action :admin_user, only: :destroy
-  before_action :create_comment, only: [:show, :feed]
 
   def index
     @users = User.all
   end
 
   def show
+    @posts = @user.posts
   end
 
   def new
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update
@@ -80,15 +79,5 @@ class UsersController < ApplicationController
 
     def create_post
       @post = current_user.posts.build if logged_in?
-    end
-
-    def create_comment
-      @user = User.find(params[:id])
-      @posts = @user.posts
-      @posts.each do |i|
-        @commentable = i
-        @comments = @commentable.comments
-        @comment = Comment.new
-      end
     end
 end

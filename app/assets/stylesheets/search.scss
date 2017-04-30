@@ -1,3 +1,17 @@
 // Place all the styles related to the search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#form-s {
+  width: 85%;
+  margin: 20px 0px 20px 30px;
+  height: 40px;
+}
+
+h1#search {
+  color: black;
+  font-weight: 600;
+  font-family: 'Ribeye Marrow';
+  font-size: 49px;
+  margin-top: -1px;
+}

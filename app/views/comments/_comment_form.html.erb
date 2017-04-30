@@ -1,6 +1,6 @@
-<%= form_for [@commentable, @comment] do |f| %>
+<%= form_for [commentable, comment] do |f| %>
 	<div class="field">
-		<%= f.text_area :comment_text, class: 'form-control', placeholder: "Compose new comment...", cols: 50 %>
+		<%= f.text_area :comment_text, class: 'form-control', placeholder: "Compose new сomment...", cols: 20, rows: 1 %>
 	</div>
-	<%= f.submit "Send", class: "btn btn-default pull-right" %>
+	<%= f.submit "Comment", class: "btn-comment pull-right"%>
 <%end%>

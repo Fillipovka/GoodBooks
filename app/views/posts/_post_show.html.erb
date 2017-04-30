@@ -17,6 +17,7 @@
 	<tr>
 		<td colspan="3" id="aaa">
 			<ul class="list-inline list-unstyled">
+				<a href="#comment<%= post.id %>" class="add_comment" data-toggle="collapse">Add comment(<%= post.comments.count %>)</a>
         <li>|</li>
         <li>
           <% if current_user?(post.user) %>
@@ -25,16 +26,18 @@
         </li>
         <li>|</li>
         <li class="add_comment">Likes</li>
+        <div id="comment<%= post.id %>" class="collapse">
+  				<div class="col-sm-11" style="margin-left: 70px; margin-top: 30px;">
+      			<%= render 'comments/comment_form', commentable: post, comment: Comment.new %>    
+    				<% unless post.comments.empty? %>
+      				<% post.comments.each do |c| %>
+        				<%= render 'comments/comment_show', comment: c %>
+      				<% end %>
+    				<% end %>
+  				</div>
+				</div>
       </ul>
 		</td>
 	</tr>
 </table>
-
-<div id="comment" class="collapse">
-  <div class="col-sm-11" style="margin-left: 70px; height: 50">
-    <div class="well">
-      <%= render 'comments/comment_form', commentable: post, comments: post.comments %><br>     
-    </div>
-  </div>
-</div>
 <hr style="background: black; height: 3px;">

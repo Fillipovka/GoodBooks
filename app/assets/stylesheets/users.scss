@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-/* SING IN*/
+/* SING IN, LOG IN*/
 .input,
 .input label,
 .input input,
@@ -90,7 +90,7 @@
 }
 
 
-/* HEADER */
+/* HEADER FOR SING IN, LOG IN*/
 
 h1.brand {
   color: #1d2120;
@@ -129,6 +129,9 @@ h1.brand {
   padding-left: 10px;
   margin: 10px 25px;
 }
+
+
+/* PERSONAL USER PAGE */
 
 .header-image {
   margin-left: 50px;
@@ -173,12 +176,11 @@ h3#panel-text, h2#panel-count {
   font-family: 'Basic';
 }
 
-h3#panel-text {
+h3#panel-text, h2#panel-count {
   font-size: 20px;
 }
 
 h2#panel-count {
-  font-size: 20px;
   margin-top: -10px;
 }
 
@@ -198,6 +200,7 @@ h2#panel-count {
   float: left;
   width: 44%;
 }
+
 #about-user, #interests-user, #data-user, #name-user {
   font-family: 'Basic';
   font-size: 21px;
@@ -233,12 +236,13 @@ h2#panel-count {
   margin-top: 20px;
 }
 
-.btn-p {
+/*POST AND COMMENT BUTTONS*/
+
+.btn-p, .btn-comment {
   position: relative;
   height: 25px;
   width: 100px;
-  margin: 10px 25px;
-  padding-left: 10px;
+  margin-top: 10px;
   font-weight: 500;
   font-size: 13px;
   letter-spacing: 2px;
@@ -253,52 +257,9 @@ h2#panel-count {
   font-family: 'Roboto', sans-serif;
 }
 
-
-td#p-u-photo {
-  width: 13%;
-  padding-top: 15px; 
-  padding-left: 8px;
-}
-
-.img-circular{
- width: 90px;
- height: 120px;
- background-size: cover;
- display: block;
- border-radius: 100px;
- -webkit-border-radius: 100px;
- -moz-border-radius: 100px;
-}
-
-p#post {
-  font-family: 'Basic';
-  font-size: 16px;
-  font-weight: 20;
+.btn-p {
   padding-left: 10px;
-}
-
-h3#post {
-  font-family: 'Basic';
-  font-size: 20px;
-  font-weight: 150;
-  padding-left: 13px;
-}
-
-#data-post {
-  text-align: right;
-  font-size: 16px;
-  font-weight: 50;
-}
-
-td#aaa {
-  padding-left: 2%;
-}
-
-.add_comment, .add_comment:hover {
-  text-align: right;
-  font-size: 16px;
-  font-weight: 150;
-  color: #1d2120;
+  margin-right: 24px;
 }
 
 
