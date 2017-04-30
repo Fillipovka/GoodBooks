@@ -11,17 +11,20 @@
       <a class="navbar-brand my-brand" href="#">GoodBooks</a>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="main-link"><%= link_to "ABOUT", "#", class: 'main-link-text' %></li>
       <li class="main-link"><%= link_to "ARTICLES", "#", class: 'main-link-text' %></li>
-      <li class="main-link"><%= link_to "USERS", users_path, class: 'main-link-text' %></li>  
+      <li class="main-link"><%= link_to "USERS", users_path, class: 'main-link-text' %></li> 
       <% if logged_in? %>
          <li class="main-link"><%= link_to "FEEDS", feed_user_path(current_user), class: 'main-link-text' %></li>
         <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
         <li class="main-link"><%= link_to "LOG OUT", logout_path, method: :delete, class: 'main-link-text' %></li>
       <% else %>
-        <li class="main-link"><%= link_to "ACCOUNT", current_user, class: 'main-link-text' %></li>
-        <li class="main-link sub-item">
-          <%= link_to "LOG IN", login_path, class: 'main-link-text' %>
+        <li class="main-link"><%= link_to "ABOUT", "#", class: 'main-link-text' %></li>
+        <li class="main-link"><%= link_to "SEARCH", search_path, class: 'main-link-text' %></li> 
+        <li class="dropdown">
+          <a id="aaaa" style="background: #e8edf3;" data-toggle="dropdown"><div class="main-account-text">ACCOUNT</div></a>
+          <ul class="dropdown-menu">
+            <%= render 'users/form' %>
+          </ul>
         </li>
       <% end %>
     </ul>   
@@ -29,3 +32,26 @@
 </nav>
 
 <hr style="background-color: black; height: 8px; width: 95%;">
+
+<style>
+  .main-account-text {
+    font-family: 'Basic';font-size: 23px;
+    color: black;
+    font-weight: 700;
+  }
+
+  .main-account-text:hover {
+    font-family: 'Basic';font-size: 23px;
+    color: black;
+    font-weight: 700;
+    background: #e8edf3;
+  }
+</style>
+
+<script>
+$('ul.nav li.dropdown').hover(function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+}, function() {
+  $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+});
+</script>

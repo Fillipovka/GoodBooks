@@ -1,6 +1,5 @@
 <% provide(:title, 'Sign up') %>
 <div class="container-login">
-	<%= render 'layouts/header_login' %>
 	<div class="right-half">
 	  <h1 class="brand">GoodBooks</h1>
 	  <hr style="background-color: black; height: 10px; width: 100%; ">
@@ -29,7 +28,7 @@
 	          <td class="td-create">
 	            <div class="input">
 	              <label for="user_email">Email</label>
-	              <input type="email" name="user[email]" id="user_email">
+	              <input name="user[email]" id="user_email">
 	              <span class="spin"></span>
 	            </div>
 	          </td>

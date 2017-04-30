@@ -12,7 +12,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/header' %>
+    <% if current_page?(controller: 'users', action: 'create') %>
+      <%= render 'layouts/header_login' %>
+    <% else %>
+      <%= render 'layouts/header' %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<% if logged_in? %>
+
   <div class="container" style="width: 100%;">
 	  <div class="article">
 	  	<div class="row article">
@@ -30,13 +30,4 @@
   <div class="active-users">
   	
   </div>
-<% else %>
-  <div class="hello">
-    <table class="home" align="center">
-      <tr>
-        <td><%= button_to "Log in", login_path, :class => "button", :method => :get %></td>
-        <td><%= button_to "Sing in", signup_path, :class => "button", :method => :get %></td>
-      </tr>
-    </table>
-  </div>
-<% end %>
+  

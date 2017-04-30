@@ -3,7 +3,6 @@ class User < ApplicationRecord
 
   before_save { email.downcase! }
   before_save   :downcase_email
-  #before_create :create_activation_digest
 
   has_and_belongs_to_many :categories
   
