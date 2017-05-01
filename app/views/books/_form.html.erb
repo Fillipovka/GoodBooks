@@ -37,10 +37,11 @@
       <%= check.label %>
     <% end %>
 
+    <%= f.collection_check_boxes :category_ids, Category.all , :id, :genre, {} , { multiple: true} %>
+
     <br><br>
     <%= f.label :yearPublication %>&emsp;
     <%= f.select :yearPublication, 1701..DateTime.now.year, class: 'form-control' %>
-
     <br><br>
     <%= f.label :photo_book %>
     <%= f.file_field :photo_book, class: 'form-control' %><br><br>

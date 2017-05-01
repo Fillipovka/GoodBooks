@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-sm-8 well" style="background: #1c1c1c; width: 70%; margin-left: 20px;
 																				margin-top: 12px; border-radius: 5px;">
-				<p id="description">&emsp;<%= @book.description%></p>
+				<p id="description"><%= simple_format(@book.description) %></p>
 			</div>
 		</div>
 	</div>
