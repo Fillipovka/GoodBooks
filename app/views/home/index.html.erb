@@ -1,41 +1,41 @@
 <% if logged_admin? %>
 		<%= render 'home/admin' %>
 <% else %>
-  <div class="container" style="width: 96%;">
-	  <div class="articles">
-	    <% @last_articles.each do |i| %>
-	      <%= render 'last_article', article: i %>
-	  	<% end %>
+  <div class="row" style="width: 100%">
+    <div class="col-sm-1"></div>
+  	<div class="col-sm-7 articles">
+	  	<% @last_articles.each do |i| %>
+		    <%= render 'last_article', article: i %>
+		  <% end %>
   	</div>
-	  <div class="home-panel-left">
-	    <span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
-		</div>
+  	<div class="col-sm-3">
+  	  <div class="well" style="width: 90%; float: right;">
+  	    <div class="well well-sm" style="background: #bcd5d1;">
+	  		  <h2 id="tags">Tags</h2>
+	  		</div>
+	  			<span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
+  		</div>
+  		<div class="well" style="width: 90%; float: right;">
+  	    <div class="well well-sm" style="background: #bcd5d1;">
+	  		  <h2 id="tags">Popular Posts</h2>
+	  		</div>
+	  			<span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
+  		</div>
+  		<div class="well" style="width: 90%; float: right;">
+  	    <div class="well well-sm" style="background: #bcd5d1;">
+	  		  <h2 id="tags">Popular Users</h2>
+	  		</div>
+	  			<span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
+  		</div>
+  		<div class="well" style="width: 90%; float: right;">
+  	    <div class="well well-sm" style="background: #bcd5d1;">
+	  		  <h2 id="tags">Popular Posts</h2>
+	  		</div>
+	  			<span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
+  		</div>
+  	</div>
+  	</div>
+  	</div>
+  	<div class="col-sm-1"></div>
   </div>
-
-  <div class="active-users">
-  </div>
-  <div style="background: #1d2120">a</div>
-<div style="background: #5a5c51">b</div>
-<div style="background: #ba9077">c</div>
-<div style="background: #bcd5d1">d</div>
 <% end %>
-
-<style>
-.articles {
-	float: left;
-	width: 65%;
-}
-
-.home-panel-left {
-	background: yellow;
-	float: right;
-	margin-right: 8%;
-	width: 23%;
-	border-style: solid;
-	margin-top: 20px;
-}
-
-span.link-tag {
-	font-size: 20px;
-}
-</style>

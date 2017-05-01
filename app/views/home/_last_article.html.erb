@@ -1,40 +1,29 @@
-<div class="last-article">
-	<div id="last-article-image">
-		<%= image_tag article.photo_article.url, size: "1000x430"%>
+<div class="well">
+	<div class="row" id="last-article">
+		<div class="col-sm-12">
+			<div>
+				<%= image_tag article.photo_article.url, class: "imaa" %>
+			</div>
+		</div>
 	</div>
-	<h2 id="last-article-title"><%= article.title_article %></h2>
-	<div id="last-article-description">
-	  <p>
-			<% if article.created_at %>
-				<span>Published <%= time_ago_in_words(article.created_at) %> ago.</span>
-			<% end %>
-		</p>
-		<p><%= truncate(article.text_article, length: 250) %></p>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2 id="last-article-title"><%= article.title_article %></h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12" id="last-article-description">
+			<p>
+				<% if article.created_at %>
+					<span>Published <%= time_ago_in_words(article.created_at) %> ago.</span>
+				<% end %>
+			</p>
+			<p><%= truncate(article.text_article, length: 240) %></p>
+		</div>
 	</div>
 </div>
 
-<style>
-  .last-article {
-  	margin: 20px 0px 20px 0px;
-  	width: 100%;
-  }
 
-  #last-article-description p{
-		font-weight: 300;
-	  font-family: 'Basic';
-	  font-size: 17px;
-	  padding-left: 14%;
-	}
-
-	#last-article-image, #last-article-description {
-		float: right;
-	}
-
-	h2#last-article-title {
-		text-align: left;
-	  color: #1d2120;
-	  font-weight: 400;
-	  font-family: 'Basic';
-	  padding-left: 14%;
-	}
-</style>
+<div class="row">
+	
+</div>

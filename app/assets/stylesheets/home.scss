@@ -2,80 +2,89 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-h1 {
-  color: white;
-  padding-left: 10px;
+@media screen and (min-width: 320px) and (max-width: 640px) {
 }
 
-.row.article {	
-	background-color: #b56969;
-	
-	.col-sm-4 {	
-		padding: 70px 80px 40px 70px;
-		h5 {
-			text-align: center;
-			padding-top: 10px;
-		}
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+	.imaa {
+		height: 260px;
+		width: 680px;
+	}
+
+	h2#last-article-title {
+		padding-left: 1%;
+	}
+
+	.hr-home {
+		width: 99%;
+		height: 5px;
+		float: right;
+		background-color: black;
+	}
+
+	h2#tags {
+		font-size: 20px;
 	}
 }
 
-.article-link-text {
-	color: #1d2120;
-	font-weight: 700;
-	font-family: 'Basic';
-	font-size: 23px;
+@media screen and (min-width: 1600px) and (max-width: 1920px) {
+	.imaa {
+		height: 420px;
+		width: 1050px;
+	}
+
+	.hr-home {
+		width: 91.4%;
+		height: 5px;
+		float: right;
+		background-color: black;
+	}
+
+	h2#tags {
+		font-size: 35px;
+	}
 }
 
-.article-link-text:hover {
+/* ARTICLES THE HOME PAGE*/
+
+.articles {
+	float: left;
+}
+
+span.link-tag {
+	font-size: 20px;
+}
+
+#last-article-description p{
+	font-weight: 300;
+	font-family: 'Basic';
+	font-size: 17px;
+}
+
+#last-article-description {
+	float: right;
+}
+
+#last-article {
+
+}
+
+h2#last-article-title, h2#tags {
 	color: #1d2120;
-	font-weight: 700;
-	font-style: italic;
-	text-decoration: none;
+	font-weight: 400;
+	font-family: 'Basic';
+}
+
+h2#last-article-title {
+	text-align: left;
 } 
 
-h1.article {
-	color: #1d2120;
-	font-weight: 700;
-	font-family: 'Basic';
-	font-size: 60px;
-	padding-top: 110px;
-	padding-left: 40px;
+h2#tags {
+ 	text-align: center;
 }
-
-.row.whats-new {
-	background-color: #22264b;
-	margin-top: 40px;
-	margin-bottom: 40px;
-	padding-bottom: 40px;
-	padding-left: 280px;
-
-	h5 { 
-		padding-top: 30px;
-		text-align: center; 
-	}
-
-	.book-link-text, .book-link-text:hover {
-		color: white;
-		font-family: 'Basic';
-		font-size: 30px;
-	}
-
-	.book-link-text:hover {
-		font-style: italic;
-	}
-
-	.center-image {
-		margin: 0 auto;
-  	width: 200px;
-  	height: 310px;
-	}
-}
-
-.active-users {
-
-}
-
 
 
 /*ADMIN*/
