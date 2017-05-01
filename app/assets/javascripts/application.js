@@ -59,3 +59,8 @@ $(function() {
       }
    });
 });
+
+
+$(function(){
+   $('#last-article-description').succinct();
+});

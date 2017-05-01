@@ -1,31 +1,14 @@
 <% if logged_admin? %>
 		<%= render 'home/admin' %>
 <% else %>
-  <div class="container" style="width: 100%;">
-	  <div class="article">
-	  	<div class="row article">
-	  	 	<% @last_articles.each do |article| %>
-			    <div class="col-sm-4">
-			    	<%= image_tag article.photo_article.url, :size => "500x310", :style => "border-radius: 8px;"%>
-			    	<h5><%= link_to article.title_article, article_path(article), class: 'article-link-text'%></h5>
-			    </div>
-			  <% end %>
-		  </div>
+  <div class="container" style="width: 96%;">
+	  <div class="articles">
+	    <% @last_articles.each do |i| %>
+	      <%= render 'last_article', article: i %>
+	  	<% end %>
   	</div>
-  
-	  <h1 class="article">WHAT'S NEW</h1>
-
-	  <div class="whats-new">
-	  	<div class="row whats-new">
-	  		<% @last_books.each do |book| %> 
-			  	<div class="col-sm-2">
-			  		<h5><%= link_to book.title, book_path(book), class: 'book-link-text'%></h5>
-			  		<div class="center-image"><br>
-			  			<%= image_tag book.photo_book.url, :size => "200x310", :style => "border-radius: 8px;" %>
-			  		</div>
-			  	</div>
-			  <% end %>
-		  </div>
+	  <div class="home-panel-left">
+	    <span class="link-tag"><%= raw @tags.map(&:tag_name).map { |t| link_to t, tag_path(t) }.join(' ')%></span>
 		</div>
   </div>
 
@@ -37,3 +20,22 @@
 <div style="background: #bcd5d1">d</div>
 <% end %>
 
+<style>
+.articles {
+	float: left;
+	width: 65%;
+}
+
+.home-panel-left {
+	background: yellow;
+	float: right;
+	margin-right: 8%;
+	width: 23%;
+	border-style: solid;
+	margin-top: 20px;
+}
+
+span.link-tag {
+	font-size: 20px;
+}
+</style>

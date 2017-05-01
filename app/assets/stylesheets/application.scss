@@ -21,6 +21,149 @@ body {
 }
 
 /* HEADER */
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;
+}
+.navbar-toggle {
+  z-index:3;
+}
+
+@media screen and (min-width: 320px) and (max-width: 640px) {
+  a.my-brand {
+    font-size: 35px;
+  }
+
+  .header-line {
+    height: 5px; 
+    width: 98%;
+    margin-top: -10px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px)  {
+  .my-nav {
+    padding-top: 15px;
+  }
+
+  a.my-brand {
+    font-size: 25px;
+  }
+
+  .header-line {
+    height: 6px; 
+    width: 98%;
+  }
+  .main-link-text, .main-link-text:hover {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1600px)  {
+  .my-nav {
+    padding-top: 15px;
+  }
+
+  a.my-brand {
+    font-size: 40px;
+    padding-top: 25px;
+  }
+
+  .header-line {
+    height: 8px; 
+    width: 98%;
+  }
+
+  .main-link-text, .main-link-text:hover {
+    font-weight: 600;
+    font-size: 17px;
+  }
+
+  .welcom {
+    margin: 120px 10px 10px 50px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Basic';
+    font-size: 75px;
+  }
+  
+  .link-text-login {
+    margin: 10px 5px 5px 5px;
+  }
+
+  .link-text-login, .link-text-login:hover {
+    font-size: 16px;
+  }
+
+  .li.link-login:hover .link-text-login:hover {
+    font-size: 20px;
+  }
+
+  .container-fluid-login {
+    padding-left: 20px;
+  }
+
+  .brand {
+    padding-left: 23%;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1920px)  {
+  .my-nav {
+    padding-top: 20px;
+  }
+
+  a.my-brand {
+    font-size: 55px;
+    margin-top: 20px;
+  }
+
+  .header-line {
+    height: 10px; 
+    width: 98%;
+  }
+
+  .main-link-text, .main-link-text:hover {
+    font-weight: 700;
+    font-size: 23px;
+  }
+  .welcom {
+    margin: 220px 10px 10px 70px;
+    color: white;
+    font-weight: 700;
+    font-family: 'Basic';
+    font-size: 75px;
+  }
+  
+  .link-text-login {
+    margin: 30px 10px 10px 10px;
+  }
+
+  .link-text-login, .link-text-login:hover {
+    font-size: 23px;
+  }
+
+  .li.link-login:hover .link-text-login:hover {
+    font-size: 26px;
+  }
+
+  .container-fluid-login {
+    padding-left: 45px;
+  }
+
+  .brand {
+    padding-left: 15%;
+  }
+}
+
+.header-line {
+  background-color: #1d2120; 
+}
 
 li.main-link:link, li.main-link:visited {
 	color: #1d2120;
@@ -35,13 +178,11 @@ a.my-brand {
 	color: #1d2120;
 	font-weight: 700;
 	font-family: 'Ribeye Marrow';
-  font-size: 55px;
 }
 
 .main-link-text, .main-link-text:hover {
 	color: #1d2120;
-	font-weight: 700;
-	font-family: 'Basic';font-size: 23px;
+  font-family: 'Basic';
 }
 
 
@@ -49,22 +190,8 @@ li.main-link:hover .main-link-text:hover {
 	background-color: white;
 }
 
-.navbar-header .navbar-nav {
-  display: inline-block;
-  float: none;
-  vertical-align: top;
-}
-
 .navbar-header .navbar-collapse {
   text-align: center;
-}
-
-.brand {
-	padding-left: 10%;
-}
-
-.container-fluid {
-	padding: 40px 60px 0px 60px;
 }
 
 .container-login {
@@ -75,65 +202,23 @@ li.main-link:hover .main-link-text:hover {
   background-color: #22264b;
   float: left;
   width: 38%;
-  height: 940px;
+  height: 100vh;
 }
+
 .right-half {
   background-color: white;
   float: left;
   width: 62%;
-  height: 940px;
-}
-
-.link-text-login {
-  margin: 30px 10px 10px 10px;
+  height: 100vh;
 }
 
 .link-text-login, .link-text-login:hover {
   color: white;
   font-weight: 450;
-  font-family: 'Basic';font-size: 23px;
+  font-family: 'Basic';
 }
-
 
 li.link-login:hover .link-text-login:hover {
   background-color: #22264b;
   font-family: 'Basic';
-  font-size: 26px;
-}
-
-.container-fluid-login {
-  padding-left: 45px;
-}
-
-.welcom {
-  margin: 220px 10px 10px 70px;
-  color: white;
-  font-weight: 700;
-  font-family: 'Basic';
-  font-size: 75px;
-}
-
-
-.link-text-login-rigth, .link-text-login-rigth:hover {
-  color: #1d2120;
-  font-weight: 480;
-  font-family: 'Basic';
-  font-size: 23px;
-}
-
-
-li.link-login-rigth:hover .link-text-login-rigth:hover {
-  background-color: white;
-  font-family: 'Basic';
-  font-size: 26px;
-}
-
-.main-account-text, .main-account-text:hover  {
-  font-family: 'Basic';font-size: 23px;
-  color: #1d2120;
-  font-weight: 700;
-}
-
-.main-account-text:hover {
-  background: white;
 }
