@@ -75,3 +75,102 @@ h1.article {
 .active-users {
 
 }
+
+
+
+/*ADMIN*/
+
+#wrapper {
+  transition: all .4s ease 0s;
+  height: 100%;
+}
+
+#sidebar-wrapper {
+  margin-left: -180px;
+  left: 70px;
+  width: 200px;
+  background: #bcd5d1;
+  position: fixed;
+  height: 100%;
+  z-index: 10000;
+  transition: all .4s ease 0s;
+  width: 10%;
+}
+
+.sidebar-nav {
+  display: block;
+  float: left;
+  width: 180px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper.active #sidebar-wrapper {
+  left: 180px;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+  color: #1d2120;
+}
+
+.sidebar-nav li a {
+  display: block;
+  font-family: 'Basic';
+  font-size: 20px;
+  text-decoration: none;
+  color: #1d2120;
+}
+
+.admin-link, .admin-logout {
+	font-family: 'Basic';
+  font-size: 18px;
+  color: #1d2120;
+}
+
+
+.admin-link {
+	padding-left: 14px;
+}
+
+.admin-link:hover {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+.sidebar-nav li a:hover {
+	color: #1d2120;
+  text-decoration: none;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+	color: #1d2120;
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.main-icon, .sub-icon {
+	float: right;
+  padding-right: 20px;
+  color: #1d2120;
+}
+
+.main-icon {
+	padding-top: 20px;
+}
+
+.sub-icon {
+  padding-top: 10px;
+}
+
+.sub-icon-two {
+	padding-left: 10px;
+}

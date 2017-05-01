@@ -16,7 +16,11 @@
     <% if current_page?(controller: 'users', action: 'create') %>
       <%= render 'layouts/header_login' %>
     <% else %>
-      <%= render 'layouts/header' %>
+      <% if logged_admin? %>
+        <%= render 'layouts/header_admin'%>
+      <% else %>
+        <%= render 'layouts/header' %>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

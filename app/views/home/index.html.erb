@@ -1,4 +1,6 @@
-
+<% if logged_admin? %>
+		<%= render 'home/admin' %>
+<% else %>
   <div class="container" style="width: 100%;">
 	  <div class="article">
 	  	<div class="row article">
@@ -28,11 +30,10 @@
   </div>
 
   <div class="active-users">
-  	
   </div>
-  
-
-<div style="background: #1d2120">a</div>
+  <div style="background: #1d2120">a</div>
 <div style="background: #5a5c51">b</div>
 <div style="background: #ba9077">c</div>
 <div style="background: #bcd5d1">d</div>
+<% end %>
+

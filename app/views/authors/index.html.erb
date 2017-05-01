@@ -1,88 +1,91 @@
-<% @authors.each_slice(4) do |author|%>
-  <% if author.length == 4 %>
-    <table class="author" align="center">
-      <tr class="tr-author">
-        <td class="td-author-text">
-          <div id="author-link">
-            <%= link_to author[0].fName + "  " + author[0].lName, 
-                author_path(author[0]), class: 'link-author'%>
-          </div>
-          <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
-          <div id="author-biography">
-            &emsp;&emsp;<%= author[0].biography %>
-          </div>
-        </td>
-        <td class="td-author">
-          <div id="author-item-rigth" style="background: #b56969">
-            <div class="author-image">
-              <%= image_tag author[0].photo_author.url, :size => "220x310", id: "iauthor"%>
+<% if logged_admin? %>
+<% else %>
+  <% @authors.each_slice(4) do |author|%>
+    <% if author.length == 4 %>
+      <table class="author" align="center">
+        <tr class="tr-author">
+          <td class="td-author-text">
+            <div id="author-link">
+              <%= link_to author[0].fName + "  " + author[0].lName, 
+                  author_path(author[0]), class: 'link-author'%>
             </div>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <table class="author" align="center">
-      <tr class="tr-author">
-        <td class="td-author">
-          <div id="author-item-left" style="background: #22264b">
-            <div class="author-image">
-              <%= image_tag author[1].photo_author.url, :size => "220x310", id: "iauthor"%>
+            <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
+            <div id="author-biography">
+              &emsp;&emsp;<%= author[0].biography %>
             </div>
-          </div>
-        </td>
-        <td class="td-author-text">
-          <div id="author-link">
-            <%= link_to author[1].fName + "  " + author[1].lName, 
-                author_path(author[1]), class: 'link-author'%>
-          </div>
-          <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
-          <div id="author-biography">
-            &emsp;&emsp;<%= author[1].biography %>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <table class="author" align="center">
-      <tr class="tr-author">
-        <td class="td-author-text">
-          <div id="author-link">
-            <%= link_to author[2].fName + "  " + author[2].lName, 
-                author_path(author[2]), class: 'link-author'%>
-          </div>
-          <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
-          <div id="author-biography">
-            &emsp;&emsp;<%= author[2].biography %>
-          </div>
-        </td>
-        <td class="td-author">
-          <div id="author-item-rigth" style="background: #e6cf8b">
-            <div class="author-image">
-              <%= image_tag author[2].photo_author.url, :size => "220x310", id: "iauthor"%>
+          </td>
+          <td class="td-author">
+            <div id="author-item-rigth" style="background: #b56969">
+              <div class="author-image">
+                <%= image_tag author[0].photo_author.url, :size => "220x310", id: "iauthor"%>
+              </div>
             </div>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <table class="author" align="center">
-      <tr class="tr-author">
-        <td class="td-author">
-          <div id="author-item-left" style="background: #1d2120">
-            <div class="author-image">
-              <%= image_tag author[3].photo_author.url, :size => "240x340", id: "iauthor"%>
+          </td>
+        </tr>
+      </table>
+      <table class="author" align="center">
+        <tr class="tr-author">
+          <td class="td-author">
+            <div id="author-item-left" style="background: #22264b">
+              <div class="author-image">
+                <%= image_tag author[1].photo_author.url, :size => "220x310", id: "iauthor"%>
+              </div>
             </div>
-          </div>
-        </td>
-        <td class="td-author-text">
-          <div id="author-link">
-            <%= link_to author[3].fName + "  " + author[3].lName, 
-                author_path(author[3]), class: 'link-author'%>
-          </div>
-          <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
-          <div id="author-biography">
-            &emsp;&emsp;<%= author[3].biography %>
-          </div>
-        </td>
-      </tr>
-    </table>
+          </td>
+          <td class="td-author-text">
+            <div id="author-link">
+              <%= link_to author[1].fName + "  " + author[1].lName, 
+                  author_path(author[1]), class: 'link-author'%>
+            </div>
+            <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
+            <div id="author-biography">
+              &emsp;&emsp;<%= author[1].biography %>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table class="author" align="center">
+        <tr class="tr-author">
+          <td class="td-author-text">
+            <div id="author-link">
+              <%= link_to author[2].fName + "  " + author[2].lName, 
+                  author_path(author[2]), class: 'link-author'%>
+            </div>
+            <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
+            <div id="author-biography">
+              &emsp;&emsp;<%= author[2].biography %>
+            </div>
+          </td>
+          <td class="td-author">
+            <div id="author-item-rigth" style="background: #e6cf8b">
+              <div class="author-image">
+                <%= image_tag author[2].photo_author.url, :size => "220x310", id: "iauthor"%>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table class="author" align="center">
+        <tr class="tr-author">
+          <td class="td-author">
+            <div id="author-item-left" style="background: #1d2120">
+              <div class="author-image">
+                <%= image_tag author[3].photo_author.url, :size => "240x340", id: "iauthor"%>
+              </div>
+            </div>
+          </td>
+          <td class="td-author-text">
+            <div id="author-link">
+              <%= link_to author[3].fName + "  " + author[3].lName, 
+                  author_path(author[3]), class: 'link-author'%>
+            </div>
+            <hr style="background-color: #1d2120; height: 5px; width: 55%;"><br>
+            <div id="author-biography">
+              &emsp;&emsp;<%= author[3].biography %>
+            </div>
+          </td>
+        </tr>
+      </table>
+    <% end %>
   <% end %>
 <% end %>

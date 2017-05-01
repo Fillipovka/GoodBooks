@@ -1,0 +1,53 @@
+<div id="wrapper" class="active">  
+  <div id="sidebar-wrapper">
+    <ul id="sidebar_menu" class="sidebar-nav">
+      <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span class="main-icon glyphicon glyphicon-align-justify"></span></a></li>
+    </ul>
+    <ul class="sidebar-nav" id="sidebar">
+      <li><a href="#item-menu-u" data-toggle="collapse">Users<span class="sub-icon glyphicon glyphicon-user"></span></a></li>
+      <div id="item-menu-u" class="collapse">
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a id="a"><%= link_to "All Users", users_path, class: "admin-link" %></a></li>
+        </ul>
+      </div>
+      <li><a href="#item-menu-a" data-toggle="collapse">Articles<span class="sub-icon glyphicon glyphicon-pencil"></span></a></li>
+      <div id="item-menu-a" class="collapse">
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a id="a"><%= link_to "All Articles", articles_path, class: "admin-link" %></a></li>
+          <li><a id="a"><%= link_to "New Article", new_article_path, class: "admin-link" %></a></li>
+        </ul>
+      </div>
+      <li><a href="#item-menu-b" data-toggle="collapse">Books<span class="sub-icon glyphicon glyphicon-book"></span></a></li>
+      <div id="item-menu-b" class="collapse">
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a id="a"><%= link_to "All Books", books_path, class: "admin-link" %></a></li>
+          <li><a id="a"><%= link_to "New Book", new_book_path, class: "admin-link" %></a></li>
+        </ul>
+      </div>
+      <li><a href="#item-menu-c" data-toggle="collapse">Categories<span class="sub-icon glyphicon glyphicon-list-alt"></span></a></li>
+      <div id="item-menu-c" class="collapse">
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a id="a"><%= link_to "All Categories", categories_path, class: "admin-link" %></a></li>
+          <li><a id="a"><%= link_to "New Category", new_category_path, class: "admin-link" %></a></li>
+        </ul>
+      </div>
+      <li><a href="#item-menu-author" data-toggle="collapse">Authors<span class="sub-icon glyphicon glyphicon-font"></span></a></li>
+      <div id="item-menu-author" class="collapse">
+        <ul class="sidebar-nav" id="sidebar">
+          <li><a id="a"><%= link_to "All Authors", categories_path, class: "admin-link" %></a></li>
+          <li><a id="a"><%= link_to "New Author", new_author_path, class: "admin-link" %></a></li>
+        </ul>
+      </div>
+    </ul>
+    <ul id="sidebar_menu" class="sidebar-nav">
+      <li class="sidebar-brand"><%= link_to "Log out", logout_path, method: :delete, class: "admin-logout" %></li>
+    </ul>
+  </div>
+</div>
+
+<script>
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("active");
+});
+</script>
